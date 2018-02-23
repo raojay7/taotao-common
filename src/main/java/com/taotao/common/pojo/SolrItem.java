@@ -1,5 +1,7 @@
 package com.taotao.common.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class SolrItem
@@ -8,6 +10,30 @@ public class SolrItem
     private Integer jobId;
 
     private String jobName;
+
+    private Integer companyId;
+
+    private String companyName;
+
+    public Integer getCompanyId()
+    {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId)
+    {
+        this.companyId = companyId;
+    }
+
+    public String getCompanyName()
+    {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName)
+    {
+        this.companyName = companyName;
+    }
 
     private Integer salaryMin;
 
@@ -125,6 +151,7 @@ public class SolrItem
         this.needNum = needNum;
     }
 
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     public Date getCtime()
     {
         return ctime;
